@@ -10,6 +10,8 @@
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=autohome.com.cn
 // @grant        none
 // @namespace    https://greasyfork.org/scripts/442256
+// @updateURL       https://raw.githubusercontent.com/androidcn/userscripts/main/autohome.user.js
+// @downloadURL     https://raw.githubusercontent.com/androidcn/userscripts/main/autohome.user.js
 
 // @require     http://code.jquery.com/jquery-latest.js
 
