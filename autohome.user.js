@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         汽车之家净化
 // @namespace    http://tampermonkey.net/
-// @version      1.6.2
+// @version      1.6.3
 // @description  AllCleanAutoHome
 // @author       androidcn
 // @license      GPL-3.0 License
@@ -59,6 +59,9 @@ $(window).load(function(){
            $.each($('li>div>p.post-title>a:contains("'+val+'")'),function(index, value) {
                     $(this).parent().parent().parent().hide()
                     })
+            $.each($('div.athm-card-album43__caption:contains("'+val+'")'),function(index, value) {
+                    $(this).parent().parent().parent().hide()
+                    })
            //$('li:contains("'+val+'")').hide();
        });
         $('#js-related-cars').hide()
@@ -91,6 +94,9 @@ $(window).on('scroll',
                     $(this).parent().parent().parent().hide()
                     })
            //$('li:contains("'+val+'")').hide();
+           $.each($('div.athm-card-album43__caption:contains("'+val+'")'),function(index, value) {
+                    $(this).parent().parent().parent().hide()
+                    })
        });
                             $('#js-sticky-aside').hide()
                 });
