@@ -85,6 +85,8 @@ $(window).load(function(){
         $('#auto-brand-vr').hide()
         //论坛广告
         $('.union-ad-placeholder').hide()
+        //主页APP下载
+        $(".activity-app-layer").hide()
 
 });
 $(window).on('scroll',
