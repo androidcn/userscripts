@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         汽车之家净化
 // @namespace    http://tampermonkey.net/
-// @version      1.6.3
+// @version      1.6.4
 // @description  AllCleanAutoHome
 // @author       androidcn
 // @license      GPL-3.0 License
 // @match        *://club.autohome.com.cn/bbs/*
 // @match        *://club.m.autohome.com.cn/bbs/*
+// @match        *://www.autohome.com.cn/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=autohome.com.cn
 // @grant        none
 // @namespace    https://greasyfork.org/scripts/442256
