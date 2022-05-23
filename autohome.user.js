@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         汽车之家净化
 // @namespace    http://tampermonkey.net/
-// @version      1.6.6.1
+// @version      1.6.7
 // @description  AllCleanAutoHome
 // @author       androidcn
 // @license      GPL-3.0 License
