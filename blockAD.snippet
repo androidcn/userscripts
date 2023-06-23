@@ -1,0 +1,30 @@
+#同花顺
+^https?:\/\/adm\.10jqka\.com\.cn\/interface\/ad\/recommend url reject
+#汽车之家
+hostname = *autohome*
+^https?:\/\/adproxy\.autohome\.com\.cn\/AdvertiseService\/ url reject-img
+^https?:\/\/app2\.autoimg\.cn\/apppdfs\/ url reject-img
+#zhibo8
+hostname =a.qiumibao.com
+^https?:\/\/a\.qiumibao\.com\/activities\/config\.php$ url reject
+^https?:\/\/a\.qiumibao\.com\/ios\/config\/\?version_code= url reject
+
+# > zhongguoyidong中国移动
+^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/init\/startInit url reject
+^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/explorePage\/getAdverList url reject
+
+# > TianTianJiJin天天基金
+^https?:\/\/appactive\.1234567\.com\.cn\/AppoperationApi\/OperationService\/GetAppStartImg url reject
+
+#IMDB
+hostname = www.imdb.com, api.imdbws.com;
+^https?:\/\/api\.imdbws\.com\/ads\/ url reject
+^https?:\/\/www\.imdb\.com\.ads url reject
+
+#掌上生活
+^https?:\/\/mlife\.cmbchina\.com\/ClientFaceService\/api\/mlife\.clientface\.clientservice\.api\.advertiseService\/preCacheAdvertiseSec url reject
+
+#中国银行
+^https?:\/\/mbs\.boc\.cn\/ubas-mgateway-static\/images\/advertType\/.+.jpg url reject-img
+hostname = mbs.boc.cn
+
