@@ -1,5 +1,8 @@
 
+#!name=TB搜索广告再见
+#!desc=去除TB搜索广告
+[Script]
+tbSearch = type=http-response, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.relationrecommend\.mtoprecommend\.recommend\/, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/androidcn/userscripts/main/tbSearch.js, timeout=60, script-update-interval=0
 
-^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.relationrecommend\.mtoprecommend\.recommend\/
+[MITM]hostname = %APPEND% guide-acs.m.taobao.com
 
-hostname = guide-acs.m.taobao.com
