@@ -1,7 +1,7 @@
 var body = JSON.parse($response.body); 
  var allSections =  body.wareInfo;
  allSections = allSections.filter((item) => { 
-         return item.adIconDescribe != "广告商品"; 
+         return !item.hasOwnProperty("adIconDescribe");
  }) 
  body.wareInfo = allSections; 
  //body.data.feedsCount = allSections.length; 
