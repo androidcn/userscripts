@@ -1,6 +1,6 @@
 #!name=JD搜索广告再见
 #!desc=去除JD搜索广告
 [Script]
-jdSearch = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?!searchOrder|search|?!searchMiddle), requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/androidcn/userscripts/main/jdSearch.js, timeout=60, script-update-interval=0
+jdSearch = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=search$, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/androidcn/userscripts/main/jdSearch.js, timeout=60, script-update-interval=0
 
 [MITM]hostname = %APPEND% api.m.jd.com
