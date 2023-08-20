@@ -4,7 +4,7 @@ if(!$response.body)
  $done({});
 }
 var body = JSON.parse($response.body); 
-if (!url.includes("searchOrder") || !url.includes("searchMiddle"))
+if (url.includes("search"))
 {
 var allSections =  body.wareInfo;
  allSections = allSections.filter((item) => { 
