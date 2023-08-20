@@ -1,12 +1,24 @@
+const url =$request.url;
+if(!response.body)
+{
+ $done({});
+}
 var body = JSON.parse($response.body); 
- var allSections =  body.wareInfo;
+if (!url.includes("searchOrder") || !url.includes("searchMiddle"))
+{
+var allSections =  body.wareInfo;
  allSections = allSections.filter((item) => { 
          return !item.hasOwnProperty("adIconDescribe");
  }) 
  body.wareInfo = allSections; 
  //body.data.feedsCount = allSections.length; 
  body = JSON.stringify(body); 
- console.log("已删除JD搜索广告"); 
- $done({ 
+ console.log("已删除JD搜索广告");  
+$done({ 
      body 
  });
+}
+else{
+ $done({});
+}
+ 
