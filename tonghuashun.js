@@ -8,7 +8,7 @@ if (url.includes("recommend"))
 {
 var allSections =  body.data;
  allSections = allSections.filter((item) => { 
-         return item.info.subject != “ad”;
+         return item.info.subject != "ad";
  }) 
  body.data = allSections; 
  body.total = allSections.length; 
