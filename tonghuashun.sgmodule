@@ -1,4 +1,4 @@
 #!name=THS广告再见
 #!desc=去除THS广告
 [Script]
-jdSearch = type=http-response, pattern=^https:\/\/recommend\.10jqka\.com\.cn\/app\/discover\/api\/v1\/recommend, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/androidcn/userscripts/main/tonghuashun.js, timeout=60, script-update-interval=0
+THSblockAD = type=http-response, pattern=^https:\/\/recommend\.10jqka\.com\.cn\/app\/discover\/api\/v1\/recommend, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/androidcn/userscripts/main/tonghuashun.js, timeout=60, script-update-interval=0
