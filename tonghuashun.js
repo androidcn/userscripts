@@ -11,7 +11,7 @@ var allSections =  body.data;
          return item.info.subject != “ad”;
  }) 
  body.data = allSections; 
- //body.data.feedsCount = allSections.length; 
+ body.total = allSections.length; 
  body = JSON.stringify(body); 
  console.log("已删除tonghuashun广告");  
 $done({ 
