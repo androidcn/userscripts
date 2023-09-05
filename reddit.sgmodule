@@ -1,8 +1,6 @@
 #!name=Reddit
-#!desc=过滤推广, 关 NSFW 提示 @xream
-
+#!desc=过滤推广关 NSFW 提示
 [Script]
 Reddit = type=http-response,pattern=^https?:\/\/gql\.reddit\.com,requires-body=1,max-size=0,timeout=30,script-path=reddit.js
-
 [MITM]
-hostname = %APPEND%, gql.reddit.com
+hostname = %APPEND% gql.reddit.com
