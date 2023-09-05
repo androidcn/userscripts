@@ -1,4 +1,3 @@
-reddit.js
 let modified;
 let body;
 try {
