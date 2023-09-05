@@ -1,6 +1,9 @@
 #!name=Reddit
 #!desc=过滤推广关 NSFW 提示
 [Script]
-Reddit = type=http-response,pattern=^https?:\/\/gql\.reddit\.com,requires-body=1,max-size=0,timeout=30,script-path=reddit.js
+Reddit = type=http-response,pattern=^https?:\/\/gql\.reddit\.com,requires-body=1,max-size=0,timeout=30,script-path=https://github.com/androidcn/userscripts/raw/main/reddit.js
+
 [MITM]
 hostname = %APPEND% gql.reddit.com
+
+
