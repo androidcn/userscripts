@@ -1,5 +1,6 @@
-#!name=THS广告再见
-#!desc=去除THS广告
+#!name=同花顺广告再见
+#!desc=去除同花顺广告
+#!category=能蟹仔
 [Script]
 THSblockAD = type=http-response, pattern=^https:\/\/recommend\.10jqka\.com\.cn\/app\/discover\/api\/v1\/recommend, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/androidcn/userscripts/main/tonghuashun.js, timeout=60, script-update-interval=0
 
