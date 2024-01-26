@@ -3,7 +3,9 @@
 #!category=能蟹仔
 #!arguments=interval:"30 10 * * *"
 [Script]
-cron {{{interval}}} script-path=https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js,timeout=300, tag=达乐美
-http-request ^https:\/\/game\.dominos\.com\.cn\/loong\/game\/gameDone script-path=https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js,requires-body=true, timeout=10, tag=达乐美披萨获取token
+达乐美披萨 = type=cron, cronexp={{{interval}}}, script-path=https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js, timeout=300
+
+达乐美披萨获取token = type=http-request, pattern=^https:\/\/game\.dominos\.com\.cn\/loong\/game\/gameDone, script-path=https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js, requires-body=true, timeout=10
+
 [MITM]
 hostname =game.dominos.com.cn
