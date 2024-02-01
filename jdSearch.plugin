@@ -1,0 +1,10 @@
+#!name=京东搜索去推荐商品
+#!desc=京东搜索去推荐商品
+#!category=Androidcn
+#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1010.png
+
+[Script]
+http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=search$ script-path=https://raw.githubusercontent.com/androidcn/userscripts/main/jdSearch.js, requires-body=true, timeout=60, tag=jdSearch
+
+[MITM]
+hostname = api.m.jd.com
