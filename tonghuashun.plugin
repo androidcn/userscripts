@@ -1,0 +1,10 @@
+#!name=同花顺去推荐广告
+#!desc=去除同花顺推荐广告
+#!category=Androidcn
+#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1009.png
+
+[Script]
+http-response ^https:\/\/recommend\.10jqka\.com\.cn\/app\/discover\/api\/v1\/recommend script-path=https://raw.githubusercontent.com/androidcn/userscripts/main/tonghuashun.js, requires-body=true, timeout=60, tag=THSblockAD
+
+[MITM]
+hostname = recommend.10jqka.com.cn
