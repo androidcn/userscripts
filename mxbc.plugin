@@ -1,0 +1,11 @@
+#!name=蜜雪冰城小程序签到
+#!desc=蜜雪冰城@Sliverkiss
+#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1097.png
+
+[Script]
+http-request ^https:\/\/mxsa\.mxbc\.net\/api\/v1\/customer\/info script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js, tag=蜜雪冰城获取token
+
+cron "22 8 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js, timeout=60, tag=蜜雪冰城小程序签到
+
+[MITM]
+hostname = mxsa.mxbc.net
