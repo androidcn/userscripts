@@ -1,0 +1,6 @@
+#!name=VIF Excluded Routes
+#!desc=解决投屏异常
+#!category=能蟹仔
+
+[General]
+tun-excluded-routes = %INSERT% 239.255.255.250/32
