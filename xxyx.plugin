@@ -1,0 +1,10 @@
+#!name=晓晓优选签到
+#!desc=晓晓优选签到
+#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1048.png
+
+[Script]
+http-response ^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/my script-path=https://gist.githubusercontent.com/Sliverkiss/991a81be1fc8cf2a1937432be68f5521/raw/xxyx.js, requires-body=true, timeout=60, tag=xxyx
+cron "30 10 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/991a81be1fc8cf2a1937432be68f5521/raw/xxyx.js, timeout=300, tag=晓晓优选
+
+[MITM]
+hostname = xxyx-client-api.xiaoxiaoyouxuan.com
