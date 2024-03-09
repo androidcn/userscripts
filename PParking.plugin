@@ -1,0 +1,9 @@
+#!name=PP停车
+#!desc=PP停车
+[MITM]
+hostname = api.660pp.com
+
+[Script]
+http-request ^https:\/\/api\.660pp\.com\/rest\/[\d\.]+?\/user\/token tag=PP 停车#, script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/pp_parking.js,requires-body=0
+
+cron "17 7 * * *" script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/pp_parking.js,tag = PP 停车,enable=true
