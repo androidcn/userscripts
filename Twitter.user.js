@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Make Twitter Great Again
 // @namespace    https://github.com/androidcn/userscripts/
-// @version      2024-03-11
+// @version      2024-03-14
 // @description  为Twitter增加两个按钮，快速让Twitter算法知道你“不感兴趣的推文“ From Chrome Extension "Make Twitter Great Again" not interesting this post
 // @author       theopenprojects.io
 // @match        https://twitter.com/home
@@ -59,7 +59,7 @@ const createShityBtn = (tweet) => {
     const button = document.createElement('button');
     tweet.setAttribute('data-shit', true);
     button.classList.add('shitBtn');
-    button.innerHTML = '💩';
+    button.innerHTML = '没兴趣';
 
     const navAction = tweet.querySelector('div[role="group"][id*="id__"]');
     if (navAction) navAction.appendChild(button);
@@ -72,7 +72,7 @@ const createSilenceBtn = tweet => {
     const button = document.createElement('button');
     tweet.setAttribute('data-silence', true);
     button.classList.add('silenceBtn');
-    button.innerHTML = '🤫';
+    button.innerHTML = '封禁';
 
     const navAction = tweet.querySelector('div[role="group"][id*="id__"]');
     if (navAction) navAction.appendChild(button);
