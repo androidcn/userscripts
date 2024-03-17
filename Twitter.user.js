@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Make Twitter Great Again
 // @namespace    https://github.com/androidcn/userscripts/
-// @version      2024-03-14
+// @version      2024-03-17
 // @description  为Twitter增加两个按钮，快速让Twitter算法知道你“不感兴趣的推文“ From Chrome Extension "Make Twitter Great Again" not interesting this post
 // @author       theopenprojects.io
 // @match        https://twitter.com/home
@@ -88,9 +88,9 @@ const handleBtnClick = async (e, selector) => {
     btnDropdown.click();
 
     await sleep(5);
-    const dropdown = document.querySelector('[data-testid="Dropdown"]');
+    const dropdown = document.querySelector('[data-testid="Dropdown"],[data-testid="sheetDialog"]');
     if (!dropdown) return;
-
+    
     const item = dropdown.querySelector(selector)
     if (item) item.closest('[role]').click()
 
