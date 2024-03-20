@@ -1,0 +1,10 @@
+#!name=途虎养车
+#!desc=途虎养车@FoKit
+#!category=能蟹仔
+[MITM]
+hostname = api.tuhu.cn
+
+[Script]
+途虎养车Cookies = type=http-request,pattern=https:\/\/api\.tuhu\.cn\/User\/GetInternalCenterInfo,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/tuhu.js
+
+途虎养车 = type=cron,cronexp=17 7 * * *,timeout=60,script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/tuhu.js,script-update-interval=0
