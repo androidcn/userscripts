@@ -1,0 +1,11 @@
+#!name=HiFini签到
+#!desc=HiFini签到@lowking
+#!category=能蟹仔
+
+[Script]
+# > hifini签到
+hifini签到cookie = type=http-request,pattern=https:\/\/www.hifini.com\/my.htm,script-path=https://raw.githubusercontent.com/lowking/Scripts/master/hifini/hifiniSign.js
+hifini签到 = type=cron,cronexp="0 10 0 * * ?",wake-system=1,script-path=https://raw.githubusercontent.com/lowking/Scripts/master/hifini/hifiniSign.js
+
+[MITM]
+hostname = %APPEND% *.hifini.com
