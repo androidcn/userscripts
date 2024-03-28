@@ -1,0 +1,9 @@
+#!name=微付金币
+#!desc=微付金币
+[MITM]
+hostname = payapp.weixin.qq.com
+
+[Script]
+http-response https:\/\/payapp\.weixin\.qq\.com\/coupon-center-user\/home\/login tag=微付金币², script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/wechat_pay_coupon.js,requires-body=1
+
+cron "30 9 * * 0" script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/wechat_pay_coupon.js,tag = 微付金币,enable=true
