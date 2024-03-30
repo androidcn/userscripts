@@ -1,0 +1,10 @@
+#!name= 万达智慧商业
+#!desc= 万达智慧商业
+#!author=@leiyiyan
+[MITM]
+hostname = www.wandawic.com
+
+[Script]
+http-response ^https?:\/\/www\.wandawic\.com\/api\/foreground\/loginregister\/queryUser tag=万达智慧商业²,script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/wdzhsy/wdzhsy.js,requires-body=1
+
+cron "30 9 * * *" script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/wdzhsy/wdzhsy.js,tag=万达智慧商业,enable=true
