@@ -1,0 +1,12 @@
+#!name=永旺AEON签到
+#!desc=永旺AEON签到
+#!author=@Fokit
+#!category=能蟹仔
+
+[MITM]
+hostname = api.aeonbuy.com
+
+[Script]
+http-response https:\/\/api\.aeonbuy\.com\/api\/access-auth-api\/auth\/third\/silentWechatMiniLogin tag=永旺 Aeon²,script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/aeon_sign.js,requires-body=1
+
+cron "20 8 * * *" script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/aeon_sign.js,tag=永旺 Aeon,enable=true
