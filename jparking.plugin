@@ -1,0 +1,10 @@
+#!name=捷停车
+#!desc=捷停车
+#!author=@Fokit
+#!category=能蟹仔
+[MITM]
+hostname = sytgate.jslife.com.cn
+
+cron "15 9 * * *" script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/jparking_sign.js, tag=捷停车签到
+
+http-request ^https:\/\/sytgate\.jslife\.com\.cn\/core-gateway\/order\/carno\/pay\/info script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/jparking_sign.js, requires-body=true, timeout=10, enabled=false, tag=获取捷停车userId
