@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Github按文件更新日期排序
 // @namespace    https://github.com/androidcn/
-// @version      1.0
+// @version      1.1
 // @description  Github按文件更新日期排序...
 // @author       @Androidcn
 // @match        https://github.com/*
