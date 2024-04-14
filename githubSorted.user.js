@@ -2,7 +2,7 @@
 // @name         Github按文件更新日期排序
 // @namespace    https://github.com/androidcn/
 // @version      1.0
-// @description  Github按文件更新日期排序
+// @description  Github按文件更新日期排序...
 // @author       @Androidcn
 // @match        https://github.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=github.com
