@@ -1,2 +1,7 @@
+#!name= 黑料不打烊
+#!desc= 黑料不打烊
+#!author=@Yuheng0101
+#!category=能蟹仔
+
 [Script]
 cron "9,15 * * *" script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/hlbdy.js, timeout=10, tag=黑料不打烊, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/heiliao.png
