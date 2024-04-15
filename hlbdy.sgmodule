@@ -2,5 +2,5 @@
 #!desc= 黑料不打烊
 #!author=@Yuheng0101
 #!category=能蟹仔
-
+[Script]
 黑料不打烊 = type=cron,cronexp=0 9,15 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/hlbdy.js,timeout=60
