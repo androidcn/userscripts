@@ -1,0 +1,9 @@
+#!name=晓晓优选
+#!desc=晓晓优选
+#!author=@Sliverkiss
+#!category=能蟹仔
+[Script]
+xxyx = type=http-response, pattern=^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/my, script-path=https://gist.githubusercontent.com/Sliverkiss/991a81be1fc8cf2a1937432be68f5521/raw/xxyx.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% xxyx-client-api.xiaoxiaoyouxuan.com
