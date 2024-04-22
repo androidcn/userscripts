@@ -1,0 +1,9 @@
+#!name=蜜雪冰城
+#!desc=蜜雪冰城每日签到
+#!author=@Sliverkiss
+#!category=能蟹仔
+[Script]
+蜜雪冰城获取token = type=http-response, pattern=^https:\/\/mxsa\.mxbc\.net\/api\/v1\/customer\/info, script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js, requires-body=true, timeout=60
+
+[MITM]
+hostname = %APPEND% mxsa.mxbc.net
