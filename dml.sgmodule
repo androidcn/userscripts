@@ -1,5 +1,5 @@
 #!name=达美乐匹萨
-#!desc=达美乐
+#!desc=达美乐@Sliverkiss
 #!category=能蟹仔
 #!arguments=interval:"30 10 * * *"
 [Script]
