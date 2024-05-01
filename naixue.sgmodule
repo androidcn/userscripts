@@ -1,0 +1,13 @@
+#!name=奈雪
+#!desc=奈雪@SliverKiss
+#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1013.png
+#!category=能蟹仔
+#!arguments=interval:"30 10 * * *"
+
+[Script]
+奈雪签到 = type=cron, cronexp={{{interval}}}, script-path=https://gist.githubusercontent.com/Sliverkiss/4d0e9572b99530b7cb0e7298622aa2a9/raw/naixue.js, timeout=300
+
+奈雪点单获取token = type=http-request, pattern=^https:\/\/tm-web\.pin-dao\.cn\/user\/base-userinfo, script-path=https://gist.githubusercontent.com/Sliverkiss/4d0e9572b99530b7cb0e7298622aa2a9/raw/naixue.js, requires-body=true, timeout=60
+
+[MITM]
+hostname = %APPEND% tm-web.pin-dao.cn
