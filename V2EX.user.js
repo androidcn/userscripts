@@ -1,15 +1,13 @@
 // ==UserScript==
 // @name         V2EX隐藏右侧栏
 // @namespace    https://github.com/androidcn/userscripts/
-// @version      2024-05-02
+// @version      2024-05-03
 // @description  V2EX隐藏右侧栏，可设置记忆
 // @author       @androidcn
 // @match        https://www.v2ex.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=v2ex.com
 // @updateURL       https://github.com/androidcn/userscripts/raw/main/V2EX.user.js
 // @downloadURL     https://github.com/androidcn/userscripts/raw/main/V2EX.user.js
-// @grant        GM_registerMenuCommand
-// @grant        GM_unregisterMenuCommand
 // @grant        GM_setValue
 // @grant        GM_getValue
 
@@ -18,7 +16,6 @@
 (function() {
     'use strict';
 
-    // Your code here...
     function getHide(){
         return GM_getValue("V2EXSideBar_isHide");
     }
