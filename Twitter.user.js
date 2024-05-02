@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Make Twitter Great Again
 // @namespace    https://github.com/androidcn/userscripts/
-// @version      2024-05-06
+// @version      2024-05-07
 // @description  为Twitter增加两个按钮，快速让Twitter算法知道你“不感兴趣的推文“ From Chrome Extension "Make Twitter Great Again" not interesting this post
 // @author       theopenprojects.io
 // @match        https://twitter.com/home
@@ -12,13 +12,11 @@
 // @grant        GM_getValue
 // @license      MIT
 // ==/UserScript==
-function getHideValue(){
-    return GM_getValue("leftSideBar_hide",false);
-}
+
 var hideButton = document.createElement('button');
  function createButton() {
         // Create a button element
-        hideButton.textContent = '切换';
+        hideButton.textContent = '隐藏';
         hideButton.style.position = 'fixed';
         hideButton.style.top = '60px';
         hideButton.style.right = '20px';
@@ -32,16 +30,17 @@ function hideIt(){
     document.querySelector("header[role='banner']").style="display:none;";
     console.log('已隐藏');
     hideButton.textContent = '显示';
-    GM_setValue("leftSideBar_hide",true);
+    //GM_setValue("leftSideBar_hide",true);
 }
 function showIt(){
     document.querySelector("header[role='banner']").style="";
     console.log('已显示');
-    hideButton.textContent = '恢复';
-    GM_setValue("leftSideBar_hide",false);
+    hideButton.textContent = '隐藏';
+    //GM_setValue("leftSideBar_hide",false);
 }
     function performHidedAction() {
-        if (getHideValue()){
+        var HideText = hideButton.textContent ;
+        if (HideText == "隐藏"){
             hideIt();
         }
         else{
