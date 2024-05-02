@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Make Twitter Great Again
 // @namespace    https://github.com/androidcn/userscripts/
-// @version      2024-05-04
+// @version      2024-05-05
 // @description  为Twitter增加两个按钮，快速让Twitter算法知道你“不感兴趣的推文“ From Chrome Extension "Make Twitter Great Again" not interesting this post
 // @author       theopenprojects.io
 // @match        https://twitter.com/home
@@ -18,12 +18,7 @@ function getHideValue(){
 var hideButton = document.createElement('button');
  function createButton() {
         // Create a button element
-        if (getHideValue()){
-                hideButton.textContent = '显示';
-        }else
-        {
-                hideButton.textContent = '隐藏';
-        }
+        hideButton.textContent = '切换';
         hideButton.style.position = 'fixed';
         hideButton.style.top = '60px';
         hideButton.style.right = '20px';
@@ -39,19 +34,17 @@ var hideButton = document.createElement('button');
             document.querySelector("header[role='banner']").style="";
             console.log('已显示');
             GM_setValue("leftSideBar_hide",false);
-            hideButton.textContent = '隐藏';
         }
         else{
              document.querySelector("header[role='banner']").style="display:none;";
             console.log('已隐藏');
             GM_setValue("leftSideBar_hide",true);
-            hideButton.textContent = '显示';
         }
     }
 
     // Wait for the page to load
     window.addEventListener('load', createButton);
-performHidedAction();
+    window.addEventListener('load', performHidedAction);
 
 
 const silencePath = 'path[d="M18 6.59V1.2L8.71 7H5.5C4.12 7 3 8.12 3 9.5v5C3 15.88 4.12 17 5.5 17h2.09l-2.3 2.29 1.42 1.42 15.5-15.5-1.42-1.42L18 6.59zm-8 8V8.55l6-3.75v3.79l-6 6zM5 9.5c0-.28.22-.5.5-.5H8v6H5.5c-.28 0-.5-.22-.5-.5v-5zm6.5 9.24l1.45-1.45L16 19.2V14l2 .02v8.78l-6.5-4.06z"]'
