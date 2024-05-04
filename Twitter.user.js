@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Make Twitter Great Again
 // @namespace    https://github.com/androidcn/userscripts/
-// @version      2024-05-08
+// @version      2024-05-09
 // @description  为Twitter增加两个按钮，快速让Twitter算法知道你“不感兴趣的推文“ From Chrome Extension "Make Twitter Great Again" not interesting this post
 // @author       theopenprojects.io
 // @match        https://twitter.com/home
@@ -28,15 +28,15 @@ var hideButton = document.createElement('button');
     }
 function hideIt(){
     document.querySelector("header[role='banner']").style="display:none;";
- $('div[aria-label="Home timeline"] div:first-child').style="display:none;";
-    console.log('已隐藏');
+    document.querySelector('div[aria-label="Home timeline"] div:first-child').style="display:none;";
+    //console.log('已隐藏');
     hideButton.textContent = '显示';
     //GM_setValue("leftSideBar_hide",true);
 }
 function showIt(){
     document.querySelector("header[role='banner']").style="";
- $('div[aria-label="Home timeline"] div:first-child').style="";
-    console.log('已显示');
+    document.querySelector('div[aria-label="Home timeline"] div:first-child').style="";
+    //console.log('已显示');
     hideButton.textContent = '隐藏';
     //GM_setValue("leftSideBar_hide",false);
 }
