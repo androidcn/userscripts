@@ -1,0 +1,4 @@
+
+
+[Body Rewrite]
+http-response ^https://ab\.chatgpt\.com/v1/ '"gateValue":"false"' '"gateValue":"true"' '"value":false' '"value":true'
