@@ -1,4 +1,8 @@
-
-
+#!name=ChatGPT Desktop
+#!desc=破解GPT访问限制
+#!author=@Androidcn
+#!category=能蟹仔
+[MITM]
+hostname = ab.chatgpt.com
 [Body Rewrite]
 http-response ^https://ab\.chatgpt\.com/v1/ '"gateValue":"false"' '"gateValue":"true"' '"value":false' '"value":true'
