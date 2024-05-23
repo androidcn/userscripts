@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         Make Twitter Great Again
 // @namespace    https://github.com/androidcn/userscripts/
-// @version      2024-05-09
+// @version      2024-05-23
 // @description  为Twitter增加两个按钮，快速让Twitter算法知道你“不感兴趣的推文“ From Chrome Extension "Make Twitter Great Again" not interesting this post
 // @author       theopenprojects.io
 // @match        https://twitter.com/home
+// @match        https://x.com/home
 // @updateURL       https://github.com/androidcn/userscripts/raw/main/Twitter.user.js
 // @downloadURL     https://github.com/androidcn/userscripts/raw/main/Twitter.user.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=twitter.com
