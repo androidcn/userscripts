@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Make Twitter Great Again
 // @namespace    https://github.com/androidcn/userscripts/
-// @version      2024-05-23
+// @version      2024-05-24
 // @description  为Twitter增加两个按钮，快速让Twitter算法知道你“不感兴趣的推文“ From Chrome Extension "Make Twitter Great Again" not interesting this post
 // @author       theopenprojects.io
 // @match        https://twitter.com/home
@@ -83,7 +83,7 @@ const waitForElm = (selector) => {
 const setTabStatusToBody = () => {
     const body = document.querySelector('body')
     if (!body || !document.querySelectorAll('[role="tablist"] [role="tab"]')) return
-    if (document.URL !== 'https://twitter.com/home') return;
+    //if (document.URL !== 'https://twitter.com/home') return;
 
     if (!Array.from(document.querySelectorAll('[role="tablist"] [role="tab"][data-index]')).length > 0) Array.from(document.querySelectorAll('[role="tablist"] [role="tab"]')).map((el, idx) => el.closest('div').setAttribute('data-index', idx + 1))
 
@@ -98,7 +98,7 @@ const setTabStatusToBody = () => {
 
 const createShityBtn = (tweet) => {
     if (!tweet || tweet.querySelector('.shitBtn')) return;
-    if (document.URL !== 'https://twitter.com/home') return;
+    //if (document.URL !== 'https://twitter.com/home') return;
 
     const button = document.createElement('button');
     tweet.setAttribute('data-shit', true);
@@ -111,7 +111,7 @@ const createShityBtn = (tweet) => {
 
 const createSilenceBtn = tweet => {
     if (!tweet || tweet.querySelector('.silenceBtn')) return;
-    if (document.URL !== 'https://twitter.com/home') return;
+   // if (document.URL !== 'https://twitter.com/home') return;
 
     const button = document.createElement('button');
     tweet.setAttribute('data-silence', true);
