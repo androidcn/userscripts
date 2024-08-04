@@ -1,0 +1,12 @@
+#!name=  VVebo QuantumultX专用
+#!desc=修复VVebo用户主页时间线显示和粉丝列表 @androidcn适配
+#!author=suiyuran
+
+[mitm]
+hostname = api.weibo.cn
+[rewrite_local]
+
+^https:\/\/api\.weibo\.cn\/2\/remind\/unread_count\? url script-request-header https://gitlab.com/androidcn/userscripts/-/raw/main/QX-VVeboTimeline.js
+^https:\/\/api\.weibo\.cn\/2\/statuses\/user_timeline\? url script-request-header https://gitlab.com/androidcn/userscripts/-/raw/main/QX-VVeboTimeline.js
+^https:\/\/api\.weibo\.cn\/2\/profile\/statuses\/tab\? url script-response-body https://gitlab.com/androidcn/userscripts/-/raw/main/QX-VVeboTimeline.js
+^https:\/\/api\.weibo\.cn\/2\/cardlist\? url script-response-body https://gitlab.com/androidcn/userscripts/-/raw/main/suiyuran/fix-vvebo-fans.js
