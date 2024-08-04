@@ -1,0 +1,18 @@
+#!name= VVebo
+#!desc=修复 VVebo 用户主页时间线显示和粉丝列表
+#!author=suiyuran
+#!category=能蟹仔
+
+[Script]
+
+fix-vvebo-user-timeline = type=http-request, pattern=^https:\/\/api\.weibo\.cn\/2\/remind\/unread_count\?, script-path=https://gitlab.com/androidcn/userscripts/-/raw/main/suiyuran/fix-vvebo-user-timeline.js
+
+fix-vvebo-user-timeline2 = type=http-request, pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/user_timeline\?, script-path=https://gitlab.com/androidcn/userscripts/-/raw/main/suiyuran/fix-vvebo-user-timeline.js
+
+fix-vvebo-user-timeline3 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/profile\/statuses\/tab\?, script-path=https://gitlab.com/androidcn/userscripts/-/raw/main/suiyuran/fix-vvebo-user-timeline.js, requires-body=true
+
+fix-vvebo-fans = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/cardlist\?, script-path=https://gitlab.com/androidcn/userscripts/-/raw/main/suiyuran/fix-vvebo-fans.js, requires-body=true
+
+[MITM]
+
+hostname = %APPEND% api.weibo.cn
