@@ -1,0 +1,20 @@
+#!name=  VVebo 小火箭专用
+#!desc=修复VVebo用户主页时间线显示和粉丝列表 @androidcn适配
+#!author=suiyuran
+
+[Script]
+
+fix-vvebo-user-timeline = type=http-request, pattern=^https:\/\/api\.weibo\.cn\/2\/remind\/unread_count\?, requires-body=1,script-path=https://gitlab.com/androidcn/userscripts/-/raw/main/suiyuran/fix-vvebo-user-timeline.js
+
+fix-vvebo-user-timeline2 = type=http-request, pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/user_timeline\?, requires-body=1,script-path=https://gitlab.com/androidcn/userscripts/-/raw/main/suiyuran/fix-vvebo-user-timeline.js
+
+fix-vvebo-user-timeline3 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/profile\/statuses\/tab\?,requires-body=1, script-path=https://gitlab.com/androidcn/userscripts/-/raw/main/suiyuran/fix-vvebo-user-timeline.js
+
+fix-vvebo-user-timeline4 = type=http-request, pattern=^https:\/\/api\.weibo\.cn\/2\/users\/show\?,requires-body=1, script-path=https://gitlab.com/androidcn/userscripts/-/raw/main/suiyuran/fix-vvebo-user-timeline.js
+
+fix-vvebo-fans = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/cardlist\?,requires-body=1, script-path=https://gitlab.com/androidcn/userscripts/-/raw/main/suiyuran/ix-vvebo-fans.js, requires-body=true
+
+
+
+[MITM]
+hostname = %INSERT% api.weibo.cn
