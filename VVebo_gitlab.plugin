@@ -1,0 +1,13 @@
+#!name=  VVebo Loon专用
+#!desc=修复VVebo用户主页时间线显示和粉丝列表 @androidcn适配
+#!author=suiyuran
+
+[Script]
+http-request ^https:\/\/api\.weibo\.cn\/2\/remind\/unread_count\? script-path = https://gitlab.com/androidcn/userscripts/-/raw/main/suiyuran/fix-vvebo-user-timeline.js, tag = 修复时间线1
+http-request ^https:\/\/api\.weibo\.cn\/2\/statuses\/user_timeline\? script-path = https://gitlab.com/androidcn/userscripts/-/raw/main/suiyuran/fix-vvebo-user-timeline.js, tag = 修复时间线2
+http-response ^https:\/\/api\.weibo\.cn\/2\/profile\/statuses\/tab\? script-path = https://gitlab.com/androidcn/userscripts/-/raw/main/suiyuran/fix-vvebo-user-timeline.js, requires-body = true, tag = 修复时间线3
+http-response ^https:\/\/api\.weibo\.cn\/2\/cardlist\? script-path=https://gitlab.com/androidcn/userscripts/-/raw/main/suiyuran/fix-vvebo-fans.js, requires-body=true,tag = 修复「我的」页面
+
+[MITM]
+
+hostname = %APPEND% api.weibo.cn
