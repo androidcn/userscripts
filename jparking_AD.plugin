@@ -1,0 +1,16 @@
+#!name = 捷停车广告
+#!desc = 过滤捷停车广告
+#!openUrl = https://apps.apple.com/app/id1071487344
+#!author = Androidcn[https://github.com/androidcn]
+#!tag = 去广告
+#!system = 
+#!system_version = 
+#!loon_version = 3.2.1(745)
+#!homepage = https://github.com/androidcn
+#!date = 2024-09-17 17:16:15
+
+[Rule]
+DOMAIN,csg.jparking.cn,REJECT
+DOMAIN,psbg.jparking.cn,REJECT
+DOMAIN,e.jparking.cn,REJECT
+URL-REGEX,^https:\/\/sytgate\.jslife\.com\.cn\/base-gateway\/jscpc-favour\/period\/time\/favour\/goods\/list,REJECT-DICT
