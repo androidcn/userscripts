@@ -1,8 +1,12 @@
-#!name= 微信专用DNS
-#!desc= 微信DNS
+#!name= 腾讯专用DNS
+#!desc= 微信DNS，QQ，腾讯
 #!author=Androidcn
 
 [Host]
-*.qq.com = server:119.29.29.29
+*.qq.com = server:119.28.28.28
+*.exmail.qq.com = server:119.29.29.29
+*.weixin.qq.com = server:119.29.29.29
+*.weixin.qq.com.cn = server:119.29.29.29
+*.weixin.com.cn = server:119.29.29.29
 *.tencent.com = server:119.29.29.29
 *.weixin.com = server:119.29.29.29
