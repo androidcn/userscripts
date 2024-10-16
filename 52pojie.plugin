@@ -1,0 +1,13 @@
+#!name=52pojie每日签到
+#!desc=@Yuheng0101 52破解每日签到
+#!category=Androidcn
+#!icon=https://raw.githubusercontent.com/Yuheng0101/X/main/Assets/52pojie.png
+
+[MITM]
+hostname = www.52pojie.cn
+
+[Script]
+http-request ^https:\/\/www\.52pojie\.cn\/home\.php\? tag=吾爱破解获取Cookie, script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/52pojie.js,requires-body=0
+
+cron "0 9 * * *" script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/52pojie.js, timeout=10, tag=吾爱破解签到, img-url=https://raw.githubusercontent.com/Yuheng0101/X/main/Assets/52pojie.png
+
