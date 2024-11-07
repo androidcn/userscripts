@@ -1,0 +1,9 @@
+#!name=MYXJ
+#!desc=美颜相机
+#!category=Androidcn
+#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1010.png
+
+[Script]
+http-response ^https:\/\/api\.meiyan\.com script-path=https://raw.githubusercontent.com/androidcn/userscripts/main/myxj_vip.js, requires-body=true, timeout=60, tag=Meiyanxiangji
+[MITM]
+hostname = api.meiyan.com
