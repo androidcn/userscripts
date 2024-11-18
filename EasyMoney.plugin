@@ -1,0 +1,10 @@
+#!name = 东方财富 去广告（Loon版）
+#!desc = @事儿 没啥 去除开屏广告及活动背景图，需清除缓存后生效
+#!date = 2024-11-18 21:37
+
+[Rewrite]
+^https:\/\/emdcadvertise(?:pj)?\.eastmoney\.com\/infoService\/v2 response-body-json-replace data.adpositionidlist []
+^https:\/\/swdlcdn\.eastmoney\.com\/app\/adimg\/ url reject-dict
+
+[MITM]
+hostname= emdcadvertise.eastmoney.com, emdcadvertisepj.eastmoney.com, swdlcdn.eastmoney.com
