@@ -1,0 +1,22 @@
+#!name = 黑料网去广告
+#!desc = 去除部分广告，优先使用海外永久入口，其次使用国内入口(会变动)，走代理
+#!openUrl = https://155.fun/
+#!author = fishdown
+#!tag = 去广告
+#!homepage = https://155.fun/
+#!icon = https://lneuk.rslsilne.cc/static/pc/icons/icon_512x512.qscd.png
+#!date = 2024-11-20
+
+[Rewrite] 
+# 其他页面随机去广告
+^https?:\/\/[^\/]+\/category\/6\.html$ response-body-replace-regex <style> <style>\x20.video-list\x20>\x20.video-item:nth-of-type(-n+2)\x20{\x20display:none\x20!important}\x20.gotoclick{\x20display:none\x20!important}\x20.modal{\x20display:none\x20!important}\x20.addbox{\x20display:none\x20!important}
+^https?:\/\/[^\/]+\/category\/20\.html$ response-body-replace-regex <style> <style>\x20.video-list\x20>\x20.video-item:nth-of-type(3)\x20{\x20display:none\x20!important}\x20.gotoclick{\x20display:none\x20!important}\x20.modal{\x20display:none\x20!important}\x20.addbox{\x20display:none\x20!important}
+# 首页去广告
+^https:\/\/18hlw\.com response-body-replace-regex <style> <style>\x20.gotoclick{\x20display:none\x20!important}\x20.modal{\x20display:none\x20!important}\x20.addbox{\x20display:none\x20!important}
+# 会因地址更改而失效，可以自己改下新地址正则
+^https:\/\/lneuk\.rslsilne\.cc response-body-replace-regex <style> <style>\x20.gotoclick{\x20display:none\x20!important}\x20.modal{\x20display:none\x20!important}\x20.addbox{\x20display:none\x20!important}
+^https:\/\/7054s\.rbcmpeu\.org response-body-replace-regex <style> <style>\x20.gotoclick{\x20display:none\x20!important}\x20.modal{\x20display:none\x20!important}\x20.addbox{\x20display:none\x20!important}
+^https:\/\/d2bkn61acaxm61\.cloudfront\.net response-body-replace-regex <style> <style>\x20.gotoclick{\x20display:none\x20!important}\x20.modal{\x20display:none\x20!important}\x20.addbox{\x20display:none\x20!important}
+
+[Mitm]
+hostname = 18hlw.com,lneuk.rslsilne.cc,7054s.rbcmpeu.org,d2bkn61acaxm61.cloudfront.net
