@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name HiPDA BlackList
 // @description 4d4y.com论坛的黑名单插件, 支持使用iCloud账号同步, 支持与iOS客户端同步
-// @version 0.4
+// @version 0.4.1
 // @author Jichao Wu
 // @license MIT
 // @namespace com.jichaowu.hipda
