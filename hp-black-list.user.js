@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name HiPDA BlackList
-// @description hi-pda.com论坛的黑名单插件, 支持使用iCloud账号同步, 支持与iOS客户端同步
+// @description 4d4y.com论坛的黑名单插件, 支持使用iCloud账号同步, 支持与iOS客户端同步
 // @version 0.4
 // @author Jichao Wu
 // @license MIT
@@ -26,7 +26,7 @@ function xpath(s) {
 }
 // ================= UI ==================
 
-// hi-pda-tools-by-2200
+// 4d4y-tools-by-2200
 function addConfigDiv() {
     // GM_addStyle('\
     //   #hp_blacklist_config_div {position:fixed;align:center;width: 303px;padding: 15px;bottom:20px;right:20px;z-index:99;color:#fff;background:#9287AE;border:2px solid #bfbfbf;-moz-border-radius:5px;opacity:0.95;text-align:left;font-size:14px !important;}\
@@ -78,7 +78,7 @@ function addConfigDiv() {
     }, false);
 
     q('#hp_blacklist_app_button').addEventListener('click', function(){
-    	window.location.href = "http://www.hi-pda.com/forum/viewthread.php?tid=1272557";
+    	window.location.href = "http://www.4d4y.com/forum/viewthread.php?tid=1272557";
     }, false);
 
     q('#hp_blacklist_add_btn').addEventListener('click', function(){
@@ -107,7 +107,7 @@ function addConfigDiv() {
 }
 addConfigDiv();
 
-// hi-pda-tools-by-2200
+// 4d4y-tools-by-2200
 function appendControl(){     // 添加[屏蔽]按钮
   var s = xpath("//div[@class='authorinfo']");
 
@@ -149,7 +149,7 @@ function updateBlockListUI() {
 	}
 }
 
-// hi-pda-tools-by-2200
+// 4d4y-tools-by-2200
 function removeBlockedPost() {
     if (location.href.indexOf('viewthread.php') !== -1) {
         var s = xpath("//div[@class='postinfo']");
@@ -174,7 +174,7 @@ function removeBlockedPost() {
     }
 }
 
-// hi-pda-tools-by-2200
+// 4d4y-tools-by-2200
 function onBlockUser(e){      // [屏蔽] 按钮触发
     var node = e.target.parentNode.parentNode.parentNode.parentNode.parentNode.getElementsByClassName('postinfo')[0].getElementsByTagName('a')[0];
     var username = node.text;
