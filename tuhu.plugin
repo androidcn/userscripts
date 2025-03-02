@@ -1,9 +1,9 @@
 #!name=途虎养车
-#!desc=途虎养车
+#!desc=途虎养车@Fokit修复blackBox by @Sliverkiss
 [MITM]
 hostname = api.tuhu.cn
 
 [Script]
-http-request https:\/\/api\.tuhu\.cn\/User\/GetInternalCenterInfo tag=途虎养车#, script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/tuhu.js,requires-body=0
+http-request https:\/\/api\.tuhu\.cn\/User\/GetInternalCenterInfo tag=途虎养车#, script-path=https://raw.githubusercontent.com/Sliverkiss/GoodNight/master/Script/tuhu.js,requires-body=0
 
-cron "17 7 * * *" script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/tuhu.js,tag = 途虎养车,enable=true
+cron "17 7 * * *" script-path=https://raw.githubusercontent.com/Sliverkiss/GoodNight/master/Script/tuhu.js,tag = 途虎养车,enable=true
