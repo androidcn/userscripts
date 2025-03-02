@@ -2,8 +2,12 @@
 #!desc=豆瓣电影网页插件@Neurogram
 #!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1021.png
 
+[Argument]
+arg1 = input,"tmdb_api_key",tag=TMDB-API,desc=TMDB削刮API
+arg2 = select,"US","HK","CN",tag=地区,desc=选择地区
+
 [Script]
-http-response https:\/\/m(ovie)*\.douban\.com\/(movie\/)*subject\/.+ script-path=https://raw.githubusercontent.com/Neurogram-R/Surge/refs/heads/master/Douban.js, requires-body=true, timeout=30, tag=Douban
+http-response https:\/\/m(ovie)*\.douban\.com\/(movie\/)*subject\/.+ script-path=https://raw.githubusercontent.com/Neurogram-R/Surge/refs/heads/master/Douban.js, requires-body=true, timeout=30, tag=Douban,,argument=[{arg1},{arg2}]
 
 [MITM]
 hostname = m.douban.com, movie.douban.com
