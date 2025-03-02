@@ -7,7 +7,7 @@ api_key = input,"tmdb_api_key",tag=TMDB-API,desc=TMDB削刮API
 region = select,"US","HK","CN",tag=地区,desc=选择地区
 
 [Script]
-http-response https:\/\/m(ovie)*\.douban\.com\/(movie\/)*subject\/.+ script-path=https://raw.githubusercontent.com/Neurogram-R/Surge/refs/heads/master/Douban.js, requires-body=true, timeout=30, tag=Douban,,argument=[{api_key},{region}]
+http-response https:\/\/m(ovie)*\.douban\.com\/(movie\/)*subject\/.+ script-path=https://github.com/androidcn/Surge/raw/refs/heads/patch-1/Douban.js, requires-body=true, timeout=30, tag=Douban,,argument=[{api_key},{region}]
 
 [MITM]
 hostname = m.douban.com, movie.douban.com
