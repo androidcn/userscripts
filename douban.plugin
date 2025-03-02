@@ -3,7 +3,7 @@
 #!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1021.png
 
 [Argument]
-api_key = input,"tmdb_api_key",tag=TMDB-API,desc=TMDB削刮API
+api_key = input,"",tag=TMDB-API,desc=TMDB削刮API
 region = select,"US","HK","CN",tag=地区,desc=选择地区
 
 [Script]
