@@ -3,7 +3,7 @@
 #!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1021.png
 
 [Script]
-http-response https:\/\/m(ovie)*\.douban\.com\/(movie\/)*subject\/.+ script-path=Douban.js, requires-body=true, timeout=30, tag=Douban
+http-response https:\/\/m(ovie)*\.douban\.com\/(movie\/)*subject\/.+ script-path=https://raw.githubusercontent.com/Neurogram-R/Surge/refs/heads/master/Douban.js, requires-body=true, timeout=30, tag=Douban
 
 [MITM]
 hostname = m.douban.com, movie.douban.com
