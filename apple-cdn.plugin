@@ -1,0 +1,9 @@
+#!name=Apple CDN自定义
+#!desc=解决App Store下载巨慢
+#!category=能蟹仔
+[Argument]
+arg1 = input,"14.29.72.193",tag=CDN,desc=输入IP地址
+
+
+[Host] 
+iosapps.itunes.apple.com = {arg1}
