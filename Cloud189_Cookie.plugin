@@ -5,7 +5,7 @@
 #!icon=https://cloud.189.cn/favicon.ico
 
 [Script]
-http-request ^https:\/\/h5\.cloud\.189\.cn\/main\.html#\/my script-path=https://github.com/androidcn/userscripts/raw/refs/heads/main/cloud189_cookie.js, tag=提取 cloud.189.cn Cookie, requires-body=false
+http-request ^https:\/\/api\.cloud\.189\.cn\/open\/user\/getUserInfo\.action script-path=https://github.com/androidcn/userscripts/raw/refs/heads/main/cloud189_cookie.js, tag=提取 cloud.189.cn Cookie, requires-body=false
 
 [MITM]
 hostname = h5.cloud.189.cn
