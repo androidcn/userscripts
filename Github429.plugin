@@ -2,8 +2,12 @@
 #!desc=解除 Github 429 限制
 #!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1042.png
 
+
 [Rewrite]
-(raw|gist).githubusercontent.com header-replace Accept-Language en-us
+# 解决github速率限制返回429问题
+^https:\/\/(raw|gist)\.githubusercontent\.com\/ header-replace Accept-Language en-us
+^https:\/\/github\.com\/ header-replace Accept-Language en-us
+
 
 [MITM]
 hostname = raw.githubusercontent.com, gist.githubusercontent.com
