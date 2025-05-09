@@ -2,6 +2,5 @@
 #!desc=解决App Store下载巨慢
 #!category=能蟹仔
 
-[Host] 
-testflight.apple.com = testflight.apple.com.edgekey.net
-iosapps.itunes.apple.com = iosapps.itunes.g.aaplimg.com
+[Host]
+iosapps.itunes.apple.com = iosapps.itunes.apple.com.download.ks-cdn.com
