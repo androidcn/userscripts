@@ -1,0 +1,13 @@
+#!name=美柚去广告
+#!desc=美柚去广告
+#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1042.png
+
+[Rewrite]
+^http:\/\/x\.seeyouyima\.com\/adx\/staticstics\? reject
+^https:\/\/axxd\.xmseeyouyima\.com\/ad\/ reject
+^https:\/\/axxd\.xmseeyouyima\.com\/ad_statistics\? reject
+^https:\/\/axxd\.xmseeyouyima\.com\/v1\/getad\? reject
+^https:\/\/axxd\.xmseeyouyima\.com\/pregetad\? reject
+
+[Mitm]
+x.seeyouyima.com,axxd.xmseeyouyima.com
