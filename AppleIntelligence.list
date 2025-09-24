@@ -2,4 +2,5 @@
 # > Apple Intelligence
 DOMAIN-SUFFIX, apple-relay.apple.com
 DOMAIN-SUFFIX, apple-relay.cloudflare.com
+DOMAIN-SUFFIX, apple-relay.fastly-edge.com
 DOMAIN-KEYWORD, apple-relay
