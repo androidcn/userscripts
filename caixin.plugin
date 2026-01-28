@@ -1,0 +1,17 @@
+#!name=财新去广告
+#!desc=财新去广告
+#!author=@能蟹仔
+#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1053.png
+#!tag=能蟹仔
+[Rule]
+host, dolphin.caixin.com, reject
+host, gg.caixin.com, reject
+
+^https:\/\/cxdata\.caixin\.com\/api\/dataplus\/stkData\/list url reject-dict
+^https:\/\/entities\.caixin\.com\/api\/public\/push\/appIndex\?target=index url reject-dict
+^https:\/\/gateway\.caixin\.com\/api\/app-api\/search\/getkeyword url reject-dict
+^https:\/\/gateway\.caixin\.com\/api\/app-api\/caixinminiapp\/appinfo url reject-dict
+^https:\/\/gateway\.caixin\.com\/api\/app-api\/articlesHotRecommend\/getHotRecommendArticles url reject-dict
+^https:\/\/www\.caixin\.com\/ai\/question.+ url reject-dict
+
+hostname = cxdata.caixin.com, entities.caixin.com, gateway.caixin.com, www.caixin.com
