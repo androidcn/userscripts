@@ -1,0 +1,7 @@
+#!name=X网页版标签页
+#!desc=X网页版标签页
+#!author=@奶思
+#!category=能蟹仔
+
+[Script]
+http-response ^https?:\/\/x\.com\/i\/api\/graphql\/[^\/]+\/PinnedTimelines\? script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/X/XWebEnhance.js, requires-body=true, timeout=20, tag=X网页版标签页, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/X.png
