@@ -1,12 +1,27 @@
+// Loon 脚本：X 一键拉黑
+// 适配 Loon 的 http-response 注入格式
+
+function main() {
+  // 获取响应体
+  let body = $response.body;
+  
+  // 如果没有响应体或者不是 HTML，直接返回
+  if (!body || !body.toLowerCase().includes('<!doctype') && !body.toLowerCase().includes('<html')) {
+    $done({ body });
+    return;
+  }
+
+  // 要注入的脚本代码（去掉了最外层的立即执行函数，因为会在注入时添加）
+  const injectScript = `
 (function() {
     'use strict';
     const blockMenuPathSnippet = 'M12 3.75c-4.55';
-    const blockSvg = `
+    const blockSvg = \`
         <svg viewBox="0 0 24 24" aria-hidden="true" class="quick-block-svg">
             <g><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-1.87.64-3.6 1.72-5.01l11.29 11.29C15.6 19.36 13.87 20 12 20zm6.28-2.99L6.99 5.72C8.4 4.64 10.13 4 12 4c4.41 0 8 3.59 8 8 0 1.87-.64 3.6-1.72 5.01z"></path></g>
         </svg>
-    `;
-    const btnStyle = `
+    \`;
+    const btnStyle = \`
         background-color: transparent;
         border: none;
         border-radius: 9999px;
@@ -19,9 +34,9 @@
         justify-content: center;
         transition: background-color 0.2s;
         z-index: 10;
-    `;
+    \`;
     const styleSheet = document.createElement("style");
-    styleSheet.textContent = `
+    styleSheet.textContent = \`
         .quick-block-svg {
             width: 18px;
             height: 18px;
@@ -40,7 +55,7 @@
             margin-left: 8px;
             margin-right: 8px;
         }
-    `;
+    \`;
     document.head.appendChild(styleSheet);
     const randomDelay = (min, max) =>
         new Promise(res => setTimeout(res, Math.floor(Math.random() * (max - min + 1) + min)));
@@ -62,7 +77,7 @@
         return null;
     }
     function getProfileUsernameFromPath() {
-        const m = window.location.pathname.match(/^\/([^\/?#]+)/);
+        const m = window.location.pathname.match(/^\\/([^\\/?#]+)/);
         return m ? m[1] : null;
     }
     function isOwnTweet(tweet, loggedUsername) {
@@ -70,7 +85,7 @@
         const analyticsLink = tweet.querySelector('a[href$="/analytics"]');
         if (!analyticsLink) return false;
         const href = analyticsLink.getAttribute('href');
-        const regex = new RegExp(`^\\/${loggedUsername}\\/status\\/\\d+\\/analytics$`);
+        const regex = new RegExp(\`^\\/\${loggedUsername}\\/status\\/\\d+\\/analytics$\`);
         return regex.test(href);
     }
     async function performBlock(triggerElement) {
@@ -114,13 +129,13 @@
         btn.setAttribute('style', moreButton.getAttribute('style') || '');
         const svgContainer = btn.querySelector('svg');
         if (svgContainer) {
-            svgContainer.outerHTML = `
-                <svg viewBox="0 0 24 24" aria-hidden="true" class="${svgContainer.className.baseVal}">
+            svgContainer.outerHTML = \`
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="\${svgContainer.className.baseVal}">
                     <g>
                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-1.87.64-3.6 1.72-5.01l11.29 11.29C15.6 19.36 13.87 20 12 20zm6.28-2.99L6.99 5.72C8.4 4.64 10.13 4 12 4c4.41 0 8 3.59 8 8 0 1.87-.64 3.6-1.72 5.01z"></path>
                     </g>
                 </svg>
-            `;
+            \`;
         }
         btn.onclick = (e) => {
             e.preventDefault();
@@ -169,4 +184,24 @@
     observer.observe(document.body, { childList: true, subtree: true });
     injectAll();
 })();
+  `;
 
+  // 在 </body> 标签之前注入脚本（如果找不到 </body>，就在 </html> 之前注入）
+  let modifiedBody = body;
+  const scriptTag = `<script>${injectScript}</script>`;
+  
+  if (body.includes('</body>')) {
+    modifiedBody = body.replace('</body>', scriptTag + '</body>');
+  } else if (body.includes('</html>')) {
+    modifiedBody = body.replace('</html>', scriptTag + '</html>');
+  } else {
+    // 如果都找不到，直接添加到末尾
+    modifiedBody = body + scriptTag;
+  }
+
+  // 返回修改后的响应
+  $done({ body: modifiedBody });
+}
+
+// 执行主函数
+main();
