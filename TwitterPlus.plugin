@@ -6,7 +6,7 @@
 [Script]
 http-response ^https?:\/\/x\.com\/i\/api\/graphql\/[^\/]+\/PinnedTimelines\? script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/X/XWebEnhance.js, requires-body=true, timeout=20, tag=X网页版标签页, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/X.png
 # 匹配 X / Twitter 的主页及常规功能页响应，调用 NAS 或 GitHub 上的完整 JS 进行注入
-http-response ^https?:\/\/(www\.)?(x|twitter)\.com\/($|home|explore|notifications|messages|[^/]+$) script-path=x_block_inject.js, requires-body=true, timeout=10, tag=X_Web_Block_Inject
+http-response ^https?:\/\/(www\.)?(x|twitter)\.com\/($|home|explore|notifications|messages|[^/]+$) script-path=https://raw.githubusercontent.com/androidcn/userscripts/refs/heads/main/x_block_inject.js, requires-body=true, timeout=10, tag=X_Web_Block_Inject
 
 [MITM]
 # 确保解析相关域名
