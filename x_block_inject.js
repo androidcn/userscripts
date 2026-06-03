@@ -1,12 +1,10 @@
-
 (function() {
     'use strict';
-
     const blockMenuPathSnippet = 'M12 3.75c-4.55';
     const blockSvg = `
-        &lt;svg viewBox="0 0 24 24" aria-hidden="true" class="quick-block-svg"&gt;
-            &lt;g&gt;&lt;path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-1.87.64-3.6 1.72-5.01l11.29 11.29C15.6 19.36 13.87 20 12 20zm6.28-2.99L6.99 5.72C8.4 4.64 10.13 4 12 4c4.41 0 8 3.59 8 8 0 1.87-.64 3.6-1.72 5.01z"&gt;&lt;/path&gt;&lt;/g&gt;
-        &lt;/svg&gt;
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="quick-block-svg">
+            <g><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-1.87.64-3.6 1.72-5.01l11.29 11.29C15.6 19.36 13.87 20 12 20zm6.28-2.99L6.99 5.72C8.4 4.64 10.13 4 12 4c4.41 0 8 3.59 8 8 0 1.87-.64 3.6-1.72 5.01z"></path></g>
+        </svg>
     `;
     const btnStyle = `
         background-color: transparent;
@@ -44,10 +42,8 @@
         }
     `;
     document.head.appendChild(styleSheet);
-
-    const randomDelay = (min, max) =&gt;
-        new Promise(res =&gt; setTimeout(res, Math.floor(Math.random() * (max - min + 1) + min)));
-
+    const randomDelay = (min, max) =>
+        new Promise(res => setTimeout(res, Math.floor(Math.random() * (max - min + 1) + min)));
     function getLoggedUsername() {
         const accountBtn = document.querySelector('[data-testid="SideNav_AccountSwitcher_Button"]');
         if (!accountBtn) return null;
@@ -65,12 +61,10 @@
         }
         return null;
     }
-
     function getProfileUsernameFromPath() {
         const m = window.location.pathname.match(/^\/([^\/?#]+)/);
         return m ? m[1] : null;
     }
-
     function isOwnTweet(tweet, loggedUsername) {
         if (!loggedUsername) return false;
         const analyticsLink = tweet.querySelector('a[href$="/analytics"]');
@@ -79,16 +73,15 @@
         const regex = new RegExp(`^\\/${loggedUsername}\\/status\\/\\d+\\/analytics$`);
         return regex.test(href);
     }
-
     async function performBlock(triggerElement) {
         if (!triggerElement) return;
         triggerElement.click();
         await randomDelay(50, 100);
         const menuItems = document.querySelectorAll('[role="menuitem"], [role="menuitemradio"]');
-        const blockOption = Array.from(menuItems).find(item =&gt; {
+        const blockOption = Array.from(menuItems).find(item => {
             const pathEl = item.querySelector('svg path');
-            const d = pathEl &amp;&amp; pathEl.getAttribute &amp;&amp; pathEl.getAttribute('d');
-            return d &amp;&amp; d.includes(blockMenuPathSnippet);
+            const d = pathEl && pathEl.getAttribute && pathEl.getAttribute('d');
+            return d && d.includes(blockMenuPathSnippet);
         });
         if (blockOption) {
             blockOption.click();
@@ -99,21 +92,19 @@
             triggerElement.click();
         }
     }
-
     function createBlockBtnForCaret(caret) {
         const btn = document.createElement('button');
         btn.innerHTML = blockSvg;
         btn.setAttribute('style', btnStyle);
         btn.className = 'quick-block-btn-feed';
         btn.title = 'Block user';
-        btn.onclick = (e) =&gt; {
+        btn.onclick = (e) => {
             e.preventDefault();
             e.stopPropagation();
             performBlock(caret);
         };
         return btn;
     }
-
     function createBlockBtnForProfile(moreButton) {
         const btn = moreButton.cloneNode(true);
         btn.removeAttribute('data-testid');
@@ -124,35 +115,33 @@
         const svgContainer = btn.querySelector('svg');
         if (svgContainer) {
             svgContainer.outerHTML = `
-                &lt;svg viewBox="0 0 24 24" aria-hidden="true" class="${svgContainer.className.baseVal}"&gt;
-                    &lt;g&gt;
-                        &lt;path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-1.87.64-3.6 1.72-5.01l11.29 11.29C15.6 19.36 13.87 20 12 20zm6.28-2.99L6.99 5.72C8.4 4.64 10.13 4 12 4c4.41 0 8 3.59 8 8 0 1.87-.64 3.6-1.72 5.01z"&gt;&lt;/path&gt;
-                    &lt;/g&gt;
-                &lt;/svg&gt;
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="${svgContainer.className.baseVal}">
+                    <g>
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-1.87.64-3.6 1.72-5.01l11.29 11.29C15.6 19.36 13.87 20 12 20zm6.28-2.99L6.99 5.72C8.4 4.64 10.13 4 12 4c4.41 0 8 3.59 8 8 0 1.87-.64 3.6-1.72 5.01z"></path>
+                    </g>
+                </svg>
             `;
         }
-        btn.onclick = (e) =&gt; {
+        btn.onclick = (e) => {
             e.preventDefault();
             e.stopPropagation();
             performBlock(moreButton);
         };
         return btn;
     }
-
     function injectFeedButtons(loggedUsername) {
         if (!loggedUsername) return;
         const tweets = document.querySelectorAll('[data-testid="tweet"]');
-        tweets.forEach(tweet =&gt; {
+        tweets.forEach(tweet => {
             if (tweet.querySelector('.quick-block-btn-feed')) return;
             if (isOwnTweet(tweet, loggedUsername)) return;
             const caret = tweet.querySelector('[data-testid="caret"]');
-            if (caret &amp;&amp; caret.parentNode) {
+            if (caret && caret.parentNode) {
                 const blockBtn = createBlockBtnForCaret(caret);
                 caret.parentNode.insertBefore(blockBtn, caret);
             }
         });
     }
-
     function injectProfileButton(loggedUsername) {
         const profileUsername = getProfileUsernameFromPath();
         if (!profileUsername) return;
@@ -166,21 +155,18 @@
         const blockBtn = createBlockBtnForProfile(moreButton);
         parent.insertBefore(blockBtn, moreButton);
     }
-
     function injectAll() {
         const loggedUsername = getLoggedUsername();
         if (!loggedUsername) return;
         injectFeedButtons(loggedUsername);
         injectProfileButton(loggedUsername);
     }
-
     let timeout = null;
-    const observer = new MutationObserver(() =&gt; {
+    const observer = new MutationObserver(() => {
         clearTimeout(timeout);
         timeout = setTimeout(injectAll, 150);
     });
     observer.observe(document.body, { childList: true, subtree: true });
-
     injectAll();
 })();
 
