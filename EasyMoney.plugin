@@ -4,7 +4,7 @@
 #!date=2026-06-13
 
 [Rewrite]
-^https:\/\/gbapi\.emhudong\.cn\/apparticlelist\/api\/Latest\/Articlelist\?code=.* response-body-jq 'del(.ret_ad)'
+^https:\/\/gbapi\.emhudong\.cn\/apparticlelist\/api\/Latest\/Articlelist\?code=.* response-body-json-jq 'del(.ret_ad)'
 
 [MitM]
 hostname = gbapi.emhudong.cn
