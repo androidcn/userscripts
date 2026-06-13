@@ -1,10 +1,10 @@
-#!name = 东方财富 去广告（Loon版）
-#!desc = @事儿 没啥 去除开屏广告及活动背景图，需清除缓存后生效
-#!date = 2024-11-18 21:37
+#!name=东方财富去除文章列表广告
+#!desc=东方财富去除文章列表广告
+#!author=能蟹仔
+#!date=2026-06-13
 
 [Rewrite]
-^https:\/\/emdcadvertise(?:pj)?\.eastmoney\.com\/infoService\/v2 response-body-json-replace data.adpositionidlist []
-^https:\/\/swdlcdn\.eastmoney\.com\/app\/adimg\/ url reject-dict
+^https:\/\/gbapi\.emhudong\.cn\/apparticlelist\/api\/Latest\/Articlelist\?code=.* response-body-jq 'del(.ret_ad)'
 
-[MITM]
-hostname= emdcadvertise.eastmoney.com, emdcadvertisepj.eastmoney.com, swdlcdn.eastmoney.com
+[MitM]
+hostname = gbapi.emhudong.cn
