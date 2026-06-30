@@ -1,7 +1,10 @@
-#!name=天天基金
+#!name=天天基金开屏
 #!desc=天天基金开屏广告
 #!author=@能蟹仔
 #!icon=link.badge.plus
 
 [Rewrite]
 ^https:\/\/mp\.1234567\.com\.cn\/ConfigApplet\/AppletApi\/getMiniProgramVerPackApiList reject-dict
+[MITM]
+# 必须配置 MITM 域名，Loon 才能解密并匹配到上方 Rewrite 中的具体路径
+hostname = mp.1234567.com.cn
