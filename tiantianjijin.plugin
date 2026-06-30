@@ -1,9 +1,9 @@
-#!name=天天基金去广告
+#!name=天天基金去广告2.0
 #!desc=去广告测试
 #!author=@能蟹仔
 #!icon=link.badge.plus
 [Script]
-http-request https:\/\/mp\.1234567\.com\.cn\/ConfigApplet\/AppletApi\/getMiniProgramVerPackApiList script-path=mmock-1234567.js, requires-body=true, tag=拦截天天基金
+http-request https:\/\/mp\.1234567\.com\.cn\/ConfigApplet\/AppletApi\/getMiniProgramVerPackApiList script-path=https://github.com/androidcn/userscripts/raw/refs/heads/main/mock-1234567.js, requires-body=true, tag=拦截天天基金
 
 [MITM]
 hostname = mp.1234567.com.cn
