@@ -1,9 +1,9 @@
-#!name=天天基金开屏
+#!name=天天基金开屏2.0
 #!desc=天天基金开屏广告
 #!author=@能蟹仔
 #!icon=link.badge.plus
 
 [Rewrite]
-^https:\/\/mp\.1234567\.com\.cn\/ConfigApplet\/AppletApi\/getMiniProgramVerPackApiList reject-dict
+^https:\/\/mp\.1234567\.com\.cn\/ConfigApplet\/AppletApi\/getMiniProgramVerPackApiList.* reject-dict
 [MITM]
 hostname = mp.1234567.com.cn
