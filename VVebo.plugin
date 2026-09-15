@@ -4,10 +4,10 @@
 #!icon = http://www.kkx.net/uploadfile/2023/0302/20230302170522851.png
 #!openUrl = https://apps.apple.com/app/id670910957
 [Script]
-http-request ^https:\/\/api\.weibo\.cn\/2\/remind\/unread_count\? script-path = https://raw.githubusercontent.com/suiyuran/stash/main/scripts/fix-vvebo-user-timeline.js, tag = 修复时间线1
-http-request ^https:\/\/api\.weibo\.cn\/2\/statuses\/user_timeline\? script-path = https://raw.githubusercontent.com/suiyuran/stash/main/scripts/fix-vvebo-user-timeline.js, tag = 修复时间线2
-http-response ^https:\/\/api\.weibo\.cn\/2\/profile\/statuses\/tab\? script-path = https://raw.githubusercontent.com/suiyuran/stash/main/scripts/fix-vvebo-user-timeline.js, requires-body = true, tag = 修复时间线3
-http-response ^https:\/\/api\.weibo\.cn\/2\/cardlist\? script-path=https://raw.githubusercontent.com/suiyuran/stash/main/scripts/fix-vvebo-fans.js, requires-body=true,tag = 修复「我的」页面
+request if ${url} ~= /^https:\/\/api\.weibo\.cn\/2\/remind\/unread_count\?/i then script("https://raw.githubusercontent.com/suiyuran/stash/main/scripts/fix-vvebo-user-timeline.js") with tag="修复时间线1"
+request if ${url} ~= /^https:\/\/api\.weibo\.cn\/2\/statuses\/user_timeline\?/i then script("https://raw.githubusercontent.com/suiyuran/stash/main/scripts/fix-vvebo-user-timeline.js") with tag="修复时间线2"
+response if ${url} ~= /^https:\/\/api\.weibo\.cn\/2\/profile\/statuses\/tab\?/i then script("https://raw.githubusercontent.com/suiyuran/stash/main/scripts/fix-vvebo-user-timeline.js") with tag="修复时间线3", requires_body=true
+response if ${url} ~= /^https:\/\/api\.weibo\.cn\/2\/cardlist\?/i then script("https://raw.githubusercontent.com/suiyuran/stash/main/scripts/fix-vvebo-fans.js") with tag="修复「我的」页面", requires_body=true
 
 [MITM]
 
