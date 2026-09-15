@@ -4,13 +4,13 @@
 #!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1009.png
 
 [Script]
-http-response ^https:\/\/recommend\.10jqka\.com\.cn\/app\/discover\/api\/v1\/recommend script-path=https://raw.githubusercontent.com/androidcn/userscripts/main/tonghuashun.js, requires-body=true, timeout=60, tag=THSblockAD
+response if ${url} ~= /^https:\/\/recommend\.10jqka\.com\.cn\/app\/discover\/api\/v1\/recommend/i then script("https://raw.githubusercontent.com/androidcn/userscripts/main/tonghuashun.js") with tag="THSblockAD", timeout=60, requires_body=true
 png
 
 [Rewrite]
 #同花顺
-^https?:\/\/adm\.10jqka\.com\.cn\/interface\/ad\/recommend - reject
-^https:\/\/c\.10jqka\.com\.cn\/lgt\/common2c\/auth\/api\/ad_recommend\/v1\/comment_ad_recommend - reject-dict
+request if ${url} ~= /^https?:\/\/adm\.10jqka\.com\.cn\/interface\/ad\/recommend/i then reject(404)
+request if ${url} ~= /^https:\/\/c\.10jqka\.com\.cn\/lgt\/common2c\/auth\/api\/ad_recommend\/v1\/comment_ad_recommend/i then reject_dict(200)
 
 [MITM]
 hostname = recommend.10jqka.com.cn,c.10jqka.com.cn
