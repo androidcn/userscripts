@@ -1,0 +1,9 @@
+#!name = 本机开发服务回环
+#!loon_version = 3.5.3(1007)
+
+[General]
+ipv6-vif = off
+include-tun = 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
